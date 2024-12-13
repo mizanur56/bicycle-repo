@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="">
+    <header>
+      <div
+        class="top_nav flex justify-between px-5 text-center bg-slate-800 fixed top-0 left-0 w-full"
+      >
+        <div class="top_nav_title text-white text-center gap-1 flex my-3">
+          <div class="icon">
+            <i class="fa-solid fa-bolt text-lime-600"></i>
+          </div>
+          <h2 class=""><span class="text-xl">evanto</span>market</h2>
+        </div>
+        <button
+          class="bg-lime-600 hover:bg-lime-800 text-white rounded px-3 py-2 my-2"
+        >
+          Buy Now
+        </button>
+      </div>
+      <div
+        class="middle_nav bg-black text-white text-center flex justify-around mt-12"
+      >
+        <h6 class="text-sm py-2">
+          Welcome To World's largest Online Shopping Hub
+        </h6>
+        <div class="selection_field flex">
+          <div class="first_selection">
+            <select
+              class="block w-30 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                My Account
+              </option>
+              <option value="Register">Register</option>
+              <option value="Login">Login</option>
+            </select>
+          </div>
+          <div class="second_selection">
+            <select
+              class="block w-30 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                $ Currency
+              </option>
+              <option value="euro">Euro</option>
+              <option value="dolar">US Dolar</option>
+            </select>
+          </div>
+          <div class="third_selection">
+            <select
+              class="block w-30 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                Language
+              </option>
+              <option value="euro">Arabic</option>
+              <option value="dolar">English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_nav flex justify-around">
+        <h1 class="text-black text-4xl font-bold">
+          FO<span class="text-lime-500">XX</span><br /><span
+            class="text-slate-600 font-medium text-lg"
+            >BICYCLE SHOP</span
+          >
+        </h1>
+        <div class="bottom_selection_field flex">
+          <div class="bottom_first_selection">
+            <select
+              class="w-28 bg-white text-black px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                Desktops
+              </option>
+              <option value="">KIDS BIKES (26)</option>
+              <option value="">MOUNTAIN BIKE (19)</option>
+              <option value="">ROAD BIKE (19)</option>
+              <option value="">SPORTS BIKE (16)</option>
+            </select>
+          </div>
+          <div class="bottom_second_selection">
+            <select
+              class="w-28 bg-white text-black px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                Laptops
+              </option>
+              <!-- <option value="login">Logi</option>
+            <option value="signup">Signup</option> -->
+            </select>
+          </div>
+          <div class="bottom_third_selection">
+            <select
+              class="w-33 bg-white text-black px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                Components
+              </option>
+              <option value="">MONITORS (19)</option>
+              <option value="">PRINTERS (18)</option>
+              <option value="">WEB CAMERAS (10)</option>
+            </select>
+          </div>
+          <div class="bottom_four_selection">
+            <select
+              class="px-3 py-2 w-28 bg-white text-black rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="hover:text-lime-500" value="" selected>
+                Tablets
+              </option>
+              <!-- <option value="login">Logi</option>
+              <option value="signup">Signup</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="icon-item flex items-center gap-4">
+          <i
+            id="search"
+            class="fa-solid fa-magnifying-glass border px-4 py-4 border-slate-300 rounded-full text-black hover:text-lime-500"
+          ></i>
+          <i
+            class="fa-solid fa-phone border px-4 py-4 border-slate-300 rounded-full text-black hover:text-lime-500"
+          ></i>
+          <div class="contact">
+            <h5 class="text-black">Contact us</h5>
+            <p>018-65788372</p>
+          </div>
+        </div>
+      </div>
+      <div class="cart_point flex justify-around">
+        <div class="nothing">
+          <input
+            id="input"
+            class="bg-white text-black shadow-lg w-80 h-10 absolute top-40 right-44 hidden"
+            type="text"
+            name=""
+            id=""
+            placeholder="Search"
+          />
+        </div>
+        <div class="item flex items-center max-w-6xl mx-auto justify-end">
+          <div class="div"></div>
+          <div class="cart_icon flex absolute top-48 right-28">
+            <i
+              class="fa-solid fa-cart-shopping border px-4 py-4 border-slate-300 rounded-full text-black hover:text-lime-500"
+            ></i>
+
+            <div class="cart_count">
+              <p class="text-black">My Cart</p>
+              <p>0 items</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div
+        class="box flex justify-start items-center text-black px-3 rounded-md gap-3 bg-slate-200 py-4 max-w-6xl mx-auto my-3"
+      >
+        <i class="fa-solid fa-house"></i>
+        <p>></p>
+        <p class="hover:text-lime-500">Desktops</p>
+        <p>></p>
+        <p class="hover:text-lime-500">Road Bike</p>
+        <p>></p>
+      </div> -->
+    </header>
+    <main>
+      <section class="bg-sky-300">
+        <div class="carousel w-full">
+          <!-- Slide 1 -->
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="images/banner/slide-01-1920x700.jpg" class="w-full" />
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide2" class="btn btn-circle">&#10094;</a>
+              <a href="#slide2" class="btn btn-circle">&#10095;</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="images/banner/slide-03-1920x700.jpg" class="w-full" />
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide1" class="btn btn-circle">&#10094;</a>
+              <a href="#slide1" class="btn btn-circle">&#10095;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner_image flex w-full">
+          <img
+            class="object-cover h-48 w-1/3"
+            src="images/banner/banner-1.jpg"
+            alt=""
+          />
+          <img
+            class="object-cover h-48 w-1/3"
+            src="images/banner/banner-2.jpg"
+            alt=""
+          />
+          <img
+            class="object-cover h-48 w-1/3"
+            src="images/banner/banner-3.jpg"
+            alt=""
+          />
+        </div>
+
+        <!-- <div
+          class="text_box border-solid border border-gray-300 w-56 h-48 text-black flex flex-col"
+        >
+          <a
+            class="border-b border-gray-300 px-2 py-1 hover:text-lime-500 cursor-pointer"
+            href=""
+            >Desktops</a
+          >
+          <a
+            class="border-b border-gray-300 px-2 py-2 hover:text-lime-500 cursor-pointer"
+            href=""
+            >Laptops</a
+          >
+          <a
+            class="border-b border-gray-300 px-2 py-2 hover:text-lime-500 cursor-pointer"
+            href=""
+            >Components</a
+          >
+          <a
+            class="border-b border-gray-300 px-2 py-2 hover:text-lime-500 cursor-pointer"
+            href=""
+            >Tablets</a
+          >
+          <a class="px-2 py-2 hover:text-lime-500 cursor-pointer" href=""
+            >Phones</a
+          >
+        </div> -->
+        <!-- <div
+          class="box-two flex justify-between items-center text-black border border-gray-400 h-14 w-full mx-3 my-5 px-3"
+        >
+          <div class="icon_items">
+            <i class="fa-solid fa-list pr-3 text-3xl"></i>
+            <i class="fas fa-th pr-3 text-3xl"></i>
+          </div>
+          <a class="text-lime-500" href="">Product Compare (0)</a>
+          <div>
+            <span class="">Sort By: </span>
+            <select
+              class="border p-2 rounded ml-2 bg-white"
+              aria-label="Account Options"
+            >
+              <option value="">Default</option>
+              <option value="">Name (A - Z)</option>
+              <option value="">Name (Z - A)</option>
+              <option value="">Price (Low > High)</option>
+              <option value="">Price (High > Low)</option>
+              <option value="">Rating (Highest)</option>
+              <option value="">Rating (lowest)</option>
+              <option value="">Modal (A - Z)</option>
+              <option value="">Modal (Z - A)</option>
+            </select>
+          </div>
+          <div>
+            <span class="">Show:</span>
+            <select
+              class="border p-2 rounded ml-2 bg-white"
+              aria-label="Account Options"
+            >
+              <option value="">15</option>
+              <option value="">25</option>
+              <option value="">50</option>
+              <option value="">75</option>
+              <option value="">100</option>
+            </select>
+          </div>
+        </div> -->
+      </section>
+      <section
+        class="text-center items-center justify-center max-w-6xl mx-auto"
+      >
+        <h1 class="text-3xl text-black py-8 font-semibold">
+          Trending Products
+        </h1>
+        <a
+          class="px-4 py-2 bg-slate-100 hover:bg-lime-500 hover:text-white active:bg-lime-500 active:text-white text-black rounded-lg"
+          href=""
+          >Featured</a
+        >
+        <a
+          class="px-4 py-2 mx-4 bg-slate-100 hover:bg-lime-500 hover:text-white active:bg-lime-500 active:text-white text-black rounded-lg"
+          href=""
+          >BestSeller</a
+        >
+        <a
+          class="px-4 py-2 bg-slate-100 hover:bg-lime-500 hover:text-white active:bg-lime-500 active:text-white text-black rounded-lg"
+          href=""
+          >New</a
+        >
+
+        <div
+          class="item_collection mt-8 grid grid-cols-4 justify-center text-center items-center ml-5"
+        >
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-1.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black hover:text-lime-500">
+              Bicycle
+            </h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-2.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-3.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section></section>
+    </main>
+
+    <script src="bicycle.js"></script>
+  </body>
+</html>
