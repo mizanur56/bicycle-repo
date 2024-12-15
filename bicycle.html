@@ -18,7 +18,7 @@
   <body class="">
     <header>
       <div
-        class="top_nav flex justify-between px-5 text-center bg-slate-800 fixed top-0 left-0 w-full"
+        class="top_nav flex justify-between px-5 text-center bg-slate-800 fixed-top"
       >
         <div class="top_nav_title text-white text-center gap-1 flex my-3">
           <div class="icon">
@@ -26,14 +26,22 @@
           </div>
           <h2 class=""><span class="text-xl">evanto</span>market</h2>
         </div>
-        <button
-          class="bg-lime-600 hover:bg-lime-800 text-white rounded px-3 py-2 my-2"
+        <div
+          class="cart_icon flex items-center justify-end relative top-0 right-0 space-x-2 py-4"
         >
-          Buy Now
-        </button>
+          <i
+            id="cart_icon"
+            class="fa-solid fa-cart-shopping border px-4 py-4 border-slate-300 rounded-full text-white hover:text-lime-500"
+          ></i>
+
+          <div class="cart_div">
+            <p class="text-white font-medium">My Cart</p>
+            <p id="cart_count">0 items</p>
+          </div>
+        </div>
       </div>
       <div
-        class="middle_nav bg-black text-white text-center flex justify-around mt-12"
+        class="middle_nav bg-black text-white text-center flex justify-around"
       >
         <h6 class="text-sm py-2">
           Welcome To World's largest Online Shopping Hub
@@ -41,13 +49,14 @@
         <div class="selection_field flex">
           <div class="first_selection">
             <select
+              onchange="handleNavigation(this)"
               class="block w-30 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             >
               <option class="hover:text-lime-500" value="" selected>
                 My Account
               </option>
               <option value="Register">Register</option>
-              <option value="Login">Login</option>
+              <option value="Login.html">Login</option>
             </select>
           </div>
           <div class="second_selection">
@@ -125,8 +134,6 @@
               <option class="hover:text-lime-500" value="" selected>
                 Tablets
               </option>
-              <!-- <option value="login">Logi</option>
-              <option value="signup">Signup</option> -->
             </select>
           </div>
         </div>
@@ -154,19 +161,6 @@
             id=""
             placeholder="Search"
           />
-        </div>
-        <div class="item flex items-center max-w-6xl mx-auto justify-end">
-          <div class="div"></div>
-          <div class="cart_icon flex absolute top-48 right-28">
-            <i
-              class="fa-solid fa-cart-shopping border px-4 py-4 border-slate-300 rounded-full text-black hover:text-lime-500"
-            ></i>
-
-            <div class="cart_count">
-              <p class="text-black">My Cart</p>
-              <p>0 items</p>
-            </div>
-          </div>
         </div>
       </div>
       <!-- <div
@@ -304,18 +298,355 @@
         >
         <a
           class="px-4 py-2 mx-4 bg-slate-100 hover:bg-lime-500 hover:text-white active:bg-lime-500 active:text-white text-black rounded-lg"
-          href=""
+          href="#deals"
           >BestSeller</a
         >
         <a
           class="px-4 py-2 bg-slate-100 hover:bg-lime-500 hover:text-white active:bg-lime-500 active:text-white text-black rounded-lg"
-          href=""
-          >New</a
+          href="#special"
+          >New Offer</a
         >
 
         <div
           class="item_collection mt-8 grid grid-cols-4 justify-center text-center items-center ml-5"
         >
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-1.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black hover:text-lime-500">
+              Bicycle
+            </h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt- border border-gray-200 px-3 py-3"
+              src="images/banner/image-2.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-3.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-4.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center text-black mt-2">Bicycle</h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-[url('images/banner/parallax.jpg')] bg-cover bg-center h-96 w-full flex justify-center items-center bg-fixed object-cover"
+      >
+        <div
+          class="text_information max-w-6xl mx-auto flex flex-col text-center items-center absolute right-8"
+        >
+          <p class="border border-lime-500 px-3 py-2 text-xl text-white">
+            Save to 50% off on first order!
+          </p>
+          <h1 class="text-8xl text-white py-6">Special Offer</h1>
+          <p class="pb-6 text-white">
+            Click & Collect First Delivery Free Over
+          </p>
+          <a
+            class="text-white bg-lime-500 hover:bg-black px-4 py-2 rounded"
+            href=""
+            >SHOP NOW</a
+          >
+        </div>
+      </section>
+      <section id="deals" class="text-center max-w-6xl mx-auto mt-9">
+        <h1 class="text-black text-2xl border-b border-gray-200 pb-3">
+          Deals of The Day
+        </h1>
+        <div
+          class="deal_image mt-8 grid grid-cols-4 justify-center text-center items-center"
+        >
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-1.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black hover:text-lime-500">
+              Bicycle
+            </h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+            </div>
+          </div>
+          <div class="item w-60 h-60 relative group">
+            <img
+              class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+              src="images/banner/image-1.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black hover:text-lime-500">
+              Bicycle
+            </h5>
+            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+            </div>
+          </div>
+          <div
+            onclick="window.location.href='product.html'"
+            class="item w-60 h-60 relative group"
+          >
+            <img
+              class="h-36 w-48 mx-auto mt-2"
+              src="images/banner/image-1.jpg"
+              alt="Bicycle"
+            />
+            <h5 class="text-center mt-2 text-black hover:text-lime-500">
+              Bicycle
+            </h5>
+            <h3 class="text-center text-black text-lg font-bold">$162.20</h3>
+
+            <!-- Icons Container -->
+            <div
+              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+            >
+              <i
+                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+              <i
+                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+              ></i>
+            </div>
+          </div>
           <div class="item w-60 h-60 relative group">
             <img
               class="h-36 w-48 mx-auto mt-2"
@@ -345,200 +676,277 @@
               ></i>
             </div>
           </div>
-          <div class="item w-60 h-60 relative group">
+        </div>
+      </section>
+      <section class="max-w-6xl mx-auto my-10">
+        <div class="logo_item grid grid-cols-7">
+          <img src="images/logo/logo-1.jpg" alt="" />
+          <img src="images/logo/logo-2.jpg" alt="" />
+          <img src="images/logo/logo-3.jpg" alt="" />
+          <img src="images/logo/logo-4.jpg" alt="" />
+          <img src="images/logo/logo-5.jpg" alt="" />
+          <img src="images/logo/logo-2.jpg" alt="" />
+          <img src="images/logo/logo-1.jpg" alt="" />
+        </div>
+      </section>
+      <section class="max-w-6xl mx-auto text-center">
+        <h2
+          class="text-2xl text-black font-medium mb-6 border-b border-gray-200 pb-2"
+        >
+          Latest Blog
+        </h2>
+        <div class="blog_info grid grid-cols-3">
+          <div class="relative group w-84 min-h-60">
             <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-2.jpg"
-              alt="Bicycle"
+              class="w-full h-52 object-cover"
+              src="images/blog/blog-1.jpg"
+              alt="Blog Image"
             />
-            <h5 class="text-center mt-2 text-black">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
 
             <!-- Icons Container -->
             <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+              class="absolute inset-0 flex text-center items-center justify-center gap-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             >
               <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-magnifying-glass cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
               <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-link cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
             </div>
-          </div>
-          <div class="item w-60 h-60 relative group">
-            <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-3.jpg"
-              alt="Bicycle"
-            />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
-
-            <!-- Icons Container -->
-            <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
-            >
-              <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
+            <div class="text_description my-3 text-center">
+              <div
+                class="comment_date flex text-slate-950 text-sm justify-center items-center text-center"
+              >
+                <p>0 COMMENTS</p>
+                <p class="px-2">|</p>
+                <p>17/11/2019</p>
+              </div>
+              <a class="hover:text-lime-500 text-black text-xl" href=""
+                >Tincidunt Gravida Orci Tincid...</a
+              >
+              <p>Vivamus Condimentum Bibendum Mauris. Lorem Ipsum D....</p>
             </div>
           </div>
-          <div class="item w-60 h-60 relative group">
+          <div class="relative group w-84 min-h-60 mx-2">
             <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-4.jpg"
-              alt="Bicycle"
+              class="w-full h-52 object-cover"
+              src="images/blog/blog-2.jpg"
+              alt="Blog Image"
             />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
 
             <!-- Icons Container -->
             <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+              class="absolute inset-0 flex text-center items-center justify-center gap-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             >
               <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-magnifying-glass cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
               <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-link cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
             </div>
-          </div>
-          <div class="item w-60 h-60 relative group">
-            <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-4.jpg"
-              alt="Bicycle"
-            />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
-
-            <!-- Icons Container -->
-            <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
-            >
-              <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
+            <div class="text_description my-3 text-center">
+              <div
+                class="comment_date flex text-slate-950 text-sm justify-center items-center text-center"
+              >
+                <p>0 COMMENTS</p>
+                <p class="px-2">|</p>
+                <p>17/11/2019</p>
+              </div>
+              <a class="hover:text-lime-500 text-black text-xl" href=""
+                >Tincidunt Gravida Orci Tincid...</a
+              >
+              <p>Vivamus Condimentum Bibendum Mauris. Lorem Ipsum D....</p>
             </div>
           </div>
-          <div class="item w-60 h-60 relative group">
+          <div class="relative group w-84 min-h-60">
             <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-4.jpg"
-              alt="Bicycle"
+              class="w-full h-52 object-cover"
+              src="images/blog/blog-3.jpg"
+              alt="Blog Image"
             />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
 
             <!-- Icons Container -->
             <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+              class="absolute inset-0 flex text-center items-center justify-center gap-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             >
               <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-magnifying-glass cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
               <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
+                class="fa-solid fa-link cursor-pointer bg-lime-500 px-4 py-3 rounded-full hover:bg-black"
               ></i>
             </div>
-          </div>
-          <div class="item w-60 h-60 relative group">
-            <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-4.jpg"
-              alt="Bicycle"
-            />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
-
-            <!-- Icons Container -->
-            <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
-            >
-              <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-            </div>
-          </div>
-          <div class="item w-60 h-60 relative group">
-            <img
-              class="h-36 w-48 mx-auto mt-2"
-              src="images/banner/image-4.jpg"
-              alt="Bicycle"
-            />
-            <h5 class="text-center text-black mt-2">Bicycle</h5>
-            <h3 class="text-center text-black text-lg font-bold">$123.20</h3>
-
-            <!-- Icons Container -->
-            <div
-              class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
-            >
-              <i
-                class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
-              <i
-                class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-black"
-              ></i>
+            <div class="text_description my-3 text-center">
+              <div
+                class="comment_date flex text-slate-950 text-sm justify-center items-center text-center"
+              >
+                <p>0 COMMENTS</p>
+                <p class="px-2">|</p>
+                <p>17/11/2019</p>
+              </div>
+              <a class="hover:text-lime-500 text-black text-xl" href=""
+                >Tincidunt Gravida Orci Tincid...</a
+              >
+              <p>Vivamus Condimentum Bibendum Mauris. Lorem Ipsum D....</p>
             </div>
           </div>
         </div>
       </section>
-      <section></section>
-    </main>
 
-    <script src="bicycle.js"></script>
+      <section id="special" class="max-w-6xl mx-auto">
+        <h1 class="text-black text-xl text-center">Specials</h1>
+
+        <div class="item w-60 h-60 relative group text-center">
+          <img
+            class="h-36 w-48 mx-auto mt-2 border border-gray-200 px-3 py-3"
+            src="images/banner/image-1.jpg"
+            alt="Bicycle"
+          />
+          <h5 class="text-center text-base mt-2 text-black hover:text-lime-500">
+            Canon EOS 5D
+          </h5>
+          <div class="price flex text-center items-center justify-center gap-2">
+            <h3 class="text-black text-lg font-bold">$123.20</h3>
+            <h3 class="text-black text-sm line-through">$123.20</h3>
+          </div>
+
+          <!-- Icons Container -->
+          <div
+            class="absolute inset-0 items-center justify-center gap-4 bg-black/20 cursor-pointer text-white hidden group-hover:flex"
+          >
+            <i
+              class="fas fa-shopping-cart cursor-pointer bg-lime-500 px-2 py-2 hover:bg-blac"
+            ></i>
+            <i
+              class="fa-regular fa-heart bg-lime-500 px-2 py-2 hover:bg-blac"
+            ></i>
+            <i
+              class="fa-solid fa-chart-simple bg-lime-500 px-2 py-2 hover:bg-blac"
+            ></i>
+            <i
+              class="fa-regular fa-eye bg-lime-500 px-2 py-2 hover:bg-blac"
+            ></i>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="top_footer bg-slate-100 flex justify-evenly h-16 text-black font-medium"
+      >
+        <div class="satisfaction flex gap-3 items-center">
+          <i class="fa-regular fa-face-smile hover:text-lime-500"></i>
+          <p>100% SATISFACTION</p>
+        </div>
+        <div class="shipment flex gap-3 items-center">
+          <i class="fa-solid fa-ship hover:text-lime-500"></i>
+          <p>FAST FREE SHIPMENT</p>
+        </div>
+        <div class="money_back flex gap-3 items-center">
+          <i class="fa-solid fa-money-check-dollar hover:text-lime-500"></i>
+          <p>14 DAYS MONEY BACK</p>
+        </div>
+        <div class="div flex gap-3 items-center">
+          <i class="fa-regular fa-credit-card hover:text-lime-500"></i>
+          <p>PAYMENT METHOD</p>
+        </div>
+      </div>
+      <div
+        class="second_footer h-24 bg-black text-white flex justify-around items-center"
+      >
+        <div class="second_info flex items-center gap-5">
+          <i class="fa-solid fa-envelope-open-text text-4xl"></i>
+
+          <div class="second_text">
+            <p class="text-3xl">Sign Up For Newsletter</p>
+            <p>Signup Our newsletter And get latest updates!</p>
+          </div>
+        </div>
+        <div class="second_input">
+          <input
+            class="w-96 h-12 px-2"
+            type="email"
+            name=""
+            id=""
+            placeholder="Your email address"
+          />
+          <button class="bg-lime-500 text-white hover:bg-slate-900 px-5 py-2">
+            Subscribe
+          </button>
+        </div>
+      </div>
+      <div
+        class="main_footer flex max-w-6xl mx-auto text-slate-800 h-96 justify-around items-center"
+      >
+        <div class="first_div w-56">
+          <h2 class="text-xl text-black font-medium">CONTACT US</h2>
+          <div class="locaton flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-location-dot text-lime-500"></i>
+            <p>42 Dream House, Dreammy street, 7131 Dreamville, USA</p>
+          </div>
+          <div class="gmail flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-envelope text-lime-500"></i>
+            <p>company@gmail.com</p>
+          </div>
+          <div class="call flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-phone text-lime-500"></i>
+            <p>456-456-4512</p>
+          </div>
+          <div class="locaton flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-paper-plane text-lime-500"></i>
+            <p>Dream City, USA</p>
+          </div>
+          <div class="icon_div flex mt-3 gap-4">
+            <i
+              class="fa-brands fa-facebook bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-twitter bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-google bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-pinterest bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+          </div>
+        </div>
+        <div class="second_div flex flex-col gap-3">
+          <h2 class="text-xl text-black font-medium">EXTRAS</h2>
+          <a class="hover:text-lime-500" href="">Brands</a>
+          <a class="hover:text-lime-500" href="">Gift Certificate</a>
+          <a class="hover:text-lime-500" href="">Affiliate</a>
+          <a class="hover:text-lime-500" href="">Specials</a>
+          <a class="hover:text-lime-500" href="">Site Map</a>
+        </div>
+        <div class="third_div flex flex-col gap-2">
+          <h2 class="text-xl text-black font-medium">INFORMATION</h2>
+          <a class="hover:text-lime-500" href="">About Us</a>
+          <a class="hover:text-lime-500" href="">Privacy & Policy</a>
+          <a class="hover:text-lime-500" href="">Delivery Information</a>
+          <a class="hover:text-lime-500" href="">Terms & Conditions</a>
+          <a class="hover:text-lime-500" href="">Contact Us</a>
+          <a class="hover:text-lime-500" href="">Site Map</a>
+        </div>
+        <div class="four_div flex flex-col gap-3">
+          <h2 class="text-xl text-black font-medium">MY ACCOUNT</h2>
+          <a class="hover:text-lime-500" href="">My Account</a>
+          <a class="hover:text-lime-500" href="">Order History</a>
+          <a class="hover:text-lime-500" href="">Wish List</a>
+          <a class="hover:text-lime-500" href="">Newsletter</a>
+          <a class="hover:text-lime-500" href="">Returns</a>
+        </div>
+      </div>
+      <div
+        class="last_footer bg-lime-500 text-white h-20 justify-center text-center items-center pt-"
+      >
+        <p>Powered By OpenCart Your Store © 2024</p>
+      </div>
+    </footer>
+
+    <script src="product.js" defer></script>
+    <script src="bicycle.js" defer></script>
   </body>
 </html>

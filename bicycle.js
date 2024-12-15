@@ -16,3 +16,10 @@ function showNextSlide() {
 
 // Automatically move slides every 3 seconds
 setInterval(showNextSlide, 3000);
+
+function handleNavigation(select) {
+  const value = select.value;
+  if (value) {
+    window.location.href = value;
+  }
+}

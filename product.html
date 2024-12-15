@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="top_nav flex justify-between px-5 text-center bg-slate-800 fixed-top"
+      >
+        <div class="top_nav_title text-white text-center gap-1 flex my-3">
+          <div class="icon">
+            <i class="fa-solid fa-bolt text-lime-600"></i>
+          </div>
+          <h2 class=""><span class="text-xl">evanto</span>market</h2>
+        </div>
+        <div
+          class="cart_icon flex items-center justify-end relative top-0 right-0 space-x-2 py-4"
+        >
+          <i
+            id="cart_icon"
+            class="fa-solid fa-cart-shopping border px-4 py-4 border-slate-300 rounded-full text-white hover:text-lime-500"
+          ></i>
+
+          <div class="cart_div">
+            <p class="text-white font-medium">My Cart</p>
+            <p><span id="cart_count">0</span> Items</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="my-5 pt-5">
+        <div class="flex max-w-6xl mt-5 mx-auto justify-evenly">
+          <div class="w-96 border border-gray-300">
+            <img id="main_image" src="images/banner/image-1.jpg" alt="" />
+            <div class="small_image_div flex border border-gray-300">
+              <img
+                class="small_image w-24 h-20 border-r border-gray-300"
+                src="images/banner/image-1.jpg"
+                alt=""
+              />
+              <img
+                class="small_image w-24 h-20 border-r border-gray-300"
+                src="images/banner/image-3.jpg"
+                alt=""
+              />
+              <img
+                class="small_image w-24 h-20 border-r border-gray-300"
+                src="images/banner/image-4.jpg"
+                alt=""
+              />
+              <img
+                class="small_image w-24 h-20 border-r border-gray-300"
+                src="images/banner/image-5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <h3
+              class="text-black font-semibold text-xl py-3"
+              data-name="Apple Cinema 30"
+            >
+              Apple Cinema 30"
+            </h3>
+            <p class="text-black font-medium py-3" data-brand="Apple">
+              Brand: <span class="pl-5 text-slate-800 font-normal">Apple</span>
+            </p>
+            <p class="text-black font-medium py-3">
+              Product Code:
+              <span class="pl-5 text-slate-800 font-normal">Product 15</span>
+            </p>
+            <p class="text-black font-medium py-3">
+              Reward Points:
+              <span class="pl-5 text-slate-800 font-normal">100</span>
+            </p>
+            <p class="text-black font-medium py-3">
+              Price:
+              <span class="pl-5 text-slate-800 font-normal" data-price="$162.20"
+                >$162.20</span
+              >
+            </p>
+            <button
+              onclick="addToCart(this)"
+              class="bg-lime-500 text-white px-2 py-2 hover:bg-white hover:text-black"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="top_footer bg-slate-100 flex justify-evenly h-16 text-black font-medium"
+      >
+        <div class="satisfaction flex gap-3 items-center">
+          <i class="fa-regular fa-face-smile hover:text-lime-500"></i>
+          <p>100% SATISFACTION</p>
+        </div>
+        <div class="shipment flex gap-3 items-center">
+          <i class="fa-solid fa-ship hover:text-lime-500"></i>
+          <p>FAST FREE SHIPMENT</p>
+        </div>
+        <div class="money_back flex gap-3 items-center">
+          <i class="fa-solid fa-money-check-dollar hover:text-lime-500"></i>
+          <p>14 DAYS MONEY BACK</p>
+        </div>
+        <div class="div flex gap-3 items-center">
+          <i class="fa-regular fa-credit-card hover:text-lime-500"></i>
+          <p>PAYMENT METHOD</p>
+        </div>
+      </div>
+      <div
+        class="second_footer h-24 bg-black text-white flex justify-around items-center"
+      >
+        <div class="second_info flex items-center gap-5">
+          <i class="fa-solid fa-envelope-open-text text-4xl"></i>
+
+          <div class="second_text">
+            <p class="text-3xl">Sign Up For Newsletter</p>
+            <p>Signup Our newsletter And get latest updates!</p>
+          </div>
+        </div>
+        <div class="second_input">
+          <input
+            class="w-96 h-12 px-2"
+            type="email"
+            name=""
+            id=""
+            placeholder="Your email address"
+          />
+          <button class="bg-lime-500 text-white hover:bg-slate-900 px-5 py-2">
+            Subscribe
+          </button>
+        </div>
+      </div>
+      <div
+        class="main_footer flex max-w-6xl mx-auto text-slate-800 h-96 justify-around items-center"
+      >
+        <div class="first_div w-56">
+          <h2 class="text-xl text-black font-medium">CONTACT US</h2>
+          <div class="locaton flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-location-dot text-lime-500"></i>
+            <p>42 Dream House, Dreammy street, 7131 Dreamville, USA</p>
+          </div>
+          <div class="gmail flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-envelope text-lime-500"></i>
+            <p>company@gmail.com</p>
+          </div>
+          <div class="call flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-phone text-lime-500"></i>
+            <p>456-456-4512</p>
+          </div>
+          <div class="locaton flex items-center gap-3 pt-3">
+            <i class="fa-solid fa-paper-plane text-lime-500"></i>
+            <p>Dream City, USA</p>
+          </div>
+          <div class="icon_div flex mt-3 gap-4">
+            <i
+              class="fa-brands fa-facebook bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-twitter bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-google bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+            <i
+              class="fa-brands fa-pinterest bg-black text-white px-1 py-1 cursor-pointer hover:bg-lime-500"
+            ></i>
+          </div>
+        </div>
+        <div class="second_div flex flex-col gap-3">
+          <h2 class="text-xl text-black font-medium">EXTRAS</h2>
+          <a class="hover:text-lime-500" href="">Brands</a>
+          <a class="hover:text-lime-500" href="">Gift Certificate</a>
+          <a class="hover:text-lime-500" href="">Affiliate</a>
+          <a class="hover:text-lime-500" href="">Specials</a>
+          <a class="hover:text-lime-500" href="">Site Map</a>
+        </div>
+        <div class="third_div flex flex-col gap-2">
+          <h2 class="text-xl text-black font-medium">INFORMATION</h2>
+          <a class="hover:text-lime-500" href="">About Us</a>
+          <a class="hover:text-lime-500" href="">Privacy & Policy</a>
+          <a class="hover:text-lime-500" href="">Delivery Information</a>
+          <a class="hover:text-lime-500" href="">Terms & Conditions</a>
+          <a class="hover:text-lime-500" href="">Contact Us</a>
+          <a class="hover:text-lime-500" href="">Site Map</a>
+        </div>
+        <div class="four_div flex flex-col gap-3">
+          <h2 class="text-xl text-black font-medium">MY ACCOUNT</h2>
+          <a class="hover:text-lime-500" href="">My Account</a>
+          <a class="hover:text-lime-500" href="">Order History</a>
+          <a class="hover:text-lime-500" href="">Wish List</a>
+          <a class="hover:text-lime-500" href="">Newsletter</a>
+          <a class="hover:text-lime-500" href="">Returns</a>
+        </div>
+      </div>
+      <div
+        class="last_footer bg-lime-500 text-white h-20 justify-center text-center items-center pt-"
+      >
+        <p>Powered By OpenCart Your Store © 2024</p>
+      </div>
+    </footer>
+    <!-- show cart -->
+
+    <div
+      id="shopping_cart"
+      class="absolute top-14 right-12 bg-custom-green shadow-custom backdrop-blur-[12px] border border-custom-white rounded-10 p-4 hidden"
+    >
+      <h3 class="text-black text-3xl border-b border-black font-bold pb-3">
+        Your Shopping Cart
+      </h3>
+      <div id="cart_items"></div>
+      <h2>Total: <span id="total_price">0</span></h2>
+      <div class="btn-item mt-4 flex justify-around">
+        <button
+          class="bg-lime-500 text-white px-2 py-2 hover:bg-white hover:text-black"
+        >
+          Buy Now
+        </button>
+        <button
+          onclick="closeCart()"
+          class="bg-lime-500 text-white px-2 py-2 hover:bg-white hover:text-black"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <script src="product.js" defer></script>
+    <script src="bicycle.js" defer></script>
+  </body>
+</html>
